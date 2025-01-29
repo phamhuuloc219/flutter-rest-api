@@ -27,10 +27,14 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index) {
           final user = users[index];
           // final color = user.gender == 'male' ? Colors.blue : Colors.green;
-          return ListTile(
-            title: Text(user.name.first + " " + user.name.last),
-            subtitle: Text(user.phone),
-            // tileColor: color,
+          return Card(
+            child: ListTile(
+              leading: Image(image: NetworkImage(user.avt.thumbnail)),
+              title: Text(user.name.first + " " + user.name.last),
+              subtitle: Text(user.phone),
+              trailing: Icon(Icons.more_vert),
+              // tileColor: color,
+            ),
           );
       },),
       floatingActionButton: FloatingActionButton(onPressed: fetchUsers),
@@ -49,6 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
           title: e['name']['title'],
           first: e['name']['first'],
           last: e['name']['last']);
+      final avt = UserAvatar(
+          large: e['picture']['large'],
+          medium: e['picture']['medium'],
+          thumbnail: e['picture']['thumbnail']);
       return User(
         cell: e['cell'],
         email: e['email'],
@@ -56,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
         nat: e['nat'],
         gender: e['gender'],
         name: name,
+        avt: avt,
       );
     } ).toList();
     setState(() {

@@ -5,7 +5,9 @@ class User{
   final String cell;
   final String nat;
   final UserName name;
+  final UserAvatar avt;
   User({
+    required this.avt,
     required this.name,
     required this.email,
     required this.phone,
@@ -22,4 +24,12 @@ class UserName{
 
   UserName({required this.title, required this.first, required this.last});
 
+}
+
+class UserAvatar{
+  final String large;
+  final String medium;
+  final String thumbnail;
+
+  UserAvatar({required this.large, required this.medium, required this.thumbnail});
 }
