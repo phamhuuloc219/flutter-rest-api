@@ -1,3 +1,6 @@
+import 'package:flutter_rest_api/model/user_avatar.dart';
+import 'package:flutter_rest_api/model/user_name.dart';
+
 class User{
   final String gender;
   final String email;
@@ -15,21 +18,7 @@ class User{
     required this.nat,
     required this.gender
   });
-
-}
-class UserName{
-  final String title;
-  final String first;
-  final String last;
-
-  UserName({required this.title, required this.first, required this.last});
-
-}
-
-class UserAvatar{
-  final String large;
-  final String medium;
-  final String thumbnail;
-
-  UserAvatar({required this.large, required this.medium, required this.thumbnail});
+  // String get fullName{
+  //   return '${name.title} ${name.first} ${name.last}';
+  // }
 }
