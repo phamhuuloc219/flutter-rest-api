@@ -43,7 +43,7 @@ class User{
     );
   }
 
-  // String get fullName{
-  //   return '${name.title} ${name.first} ${name.last}';
-  // }
+  String get fullName{
+    return '${name.title} ${name.first} ${name.last}';
+  }
 }
